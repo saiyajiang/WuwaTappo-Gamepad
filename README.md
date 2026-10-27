@@ -96,21 +96,6 @@ PS / Switch / 八位堂手柄才需要 SDL。
 
 控制台输出会自动切成 UTF-8 代码页，中文和繁体都不会乱码。
 
-## 作者与仓库地址
-
-托盘「关于」里的作者名和 GitHub 地址来自 `src/project.py`：
-
-```python
-AUTHOR     = "saiyajiang"
-GITHUB_URL = "https://github.com/saiyajiang/WuwaTappo-Gamepad"
-```
-
-已经填好了。要换成你自己的，改这两行再重启托盘即可 —— 关于对话框是
-**中英双语**的，不随界面语言切换。
-
-GitHub 地址在「关于」里是纯文本（MessageBox 不支持超链接），
-可以点击的是菜单里的「项目主页」项，它会用系统默认浏览器打开。
-
 
 ## 默认键位
 

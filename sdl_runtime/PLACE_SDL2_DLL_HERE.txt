@@ -1,0 +1,78 @@
+SDL2.dll 放这里 / 放這裡 / PUT IT HERE
+======================================
+
+本仓库**不附带任何 DLL 文件**，也不提供自动下载。
+请自行从官方地址下载 SDL2.dll，放进这个 `sdl_runtime\` 文件夹
+（或放进仓库根目录 —— 两个位置都会被自动识别）。
+
+This repo ships **NO dll files** and has no auto-downloader.
+Download SDL2.dll from the official source yourself and drop it in this
+`sdl_runtime\` folder (or the repo root — both are detected).
+
+
+官方下载地址 / OFFICIAL DOWNLOAD
+--------------------------------
+
+    https://github.com/libsdl-org/SDL/releases
+
+取最新版的这一项 / Take the latest one named:
+
+    SDL2-2.xx.x-win32-x64.zip
+
+（VC、64 位 / VC, 64-bit）
+
+备用镜像 / Mirror: https://www.libsdl.org/download-2.0.php
+→ Windows 一栏，VC 行的 64-bit
+
+
+选哪个版本 / WHICH BUILD
+------------------------
+
+| 你的 Python        | 下载 / Download       |
+|--------------------|-----------------------|
+| 64 位（绝大多数）  | ...-win32-x64.zip     |
+| 32 位              | ...-win32-x86.zip     |
+
+不确定就查 / Not sure? Run:
+
+    python -c "import struct;print(struct.calcsize('P')*8)"
+
+输出 64 就下 x64 / 64 means x64
+
+
+放进去之后 / AFTER THAT
+-----------------------
+
+双击仓库根目录的 `launch.bat`。看到下面这行就说明识别到了：
+
+Run `launch.bat` in the repo root. This line means it was picked up:
+
+    [OK] SDL runtime: ...\sdl_runtime\SDL2.dll
+
+
+不放行不行 / IS IT REQUIRED
+---------------------------
+
+行。不放会自动退回系统自带的 XInput，Xbox 系手柄正常工作。
+但下面这些需要 SDL：
+
+No. Without it the bridge falls back to system XInput, which works fine for
+Xbox-family pads. You need SDL for:
+
+  · PS4 / PS5（DualShock / DualSense）
+  · Switch Pro / Joy-Con
+  · 八位堂及多数国产手柄 / 8BitDo and most third-party pads
+  · 键位自动识别（SDL 官方映射库有数千条手柄记录）
+    Automatic button mapping (SDL ships thousands of controller definitions)
+
+
+许可 / LICENSE
+--------------
+
+SDL2 使用 zlib 许可证：可以自由重分发，但需保留版权声明。
+本仓库的 `.gitignore` 已忽略 `*.dll`，所以你放进去的文件不会被提交到 Git。
+
+SDL2 is zlib licensed: free to redistribute, but keep the copyright notice.
+`.gitignore` here excludes `*.dll`, so files in this folder are never committed.
+
+https://www.libsdl.org/license.php

@@ -1,0 +1,220 @@
+使用说明 / 使用說明 / HOW TO USE
+================================
+
+简体中文 · 繁體中文 · English —— 程序界面支持三种语言，首次启动会让你选。
+
+
+一、三步开始
+------------
+
+【简体】
+  1. 下载 SDL2.dll（可选）—— 地址见下面第二节
+  2. 双击 launch.bat
+  3. 托盘里操作：左键双击 = 暂停/恢复，右键 = 菜单
+
+【繁體】
+  1. 下載 SDL2.dll（選用）—— 網址見下方第二節
+  2. 雙擊 launch.bat
+  3. 托盤操作：左鍵雙擊 = 暫停/恢復，右鍵 = 選單
+
+【English】
+  1. Get SDL2.dll (optional) - see section 2
+  2. Double-click launch.bat
+  3. Tray: left double-click = pause/resume, right-click = menu
+
+托盘图标是黑白的 W：
+  黑色 W = 运行中 / Running
+  灰色 W = 已暂停 / Paused
+  灰 W + 红点 = 出错 / Error
+
+图标可能被 Windows 收进任务栏的 ∧ 里，去那里拖出来即可。
+The icon may be hidden under the taskbar's ^ arrow - drag it out.
+
+启动方式的区别：
+  launch.bat  真正后台运行，关掉窗口不停（日常用这个）
+  debug.bat   排错用，挂着窗口，关窗口就停
+  stop.bat    彻底停止
+  viewlog.bat 查看后台日志
+
+  launch.bat  : real background, survives closing the window (use this)
+  debug.bat   : for troubleshooting, tied to the window
+  stop.bat    : stop everything
+  viewlog.bat : read the background log
+
+
+二、SDL2.dll 官方下载地址
+------------------------
+
+    https://github.com/libsdl-org/SDL/releases
+
+取最新版的 SDL2-2.xx.x-win32-x64.zip（VC、64 位），
+解压出 SDL2.dll，放进 sdl_runtime\ 或仓库根目录。
+
+备用镜像 / Mirror: https://www.libsdl.org/download-2.0.php
+（Windows 一栏，VC 行，64-bit）
+
+【English】Take the latest SDL2-2.xx.x-win32-x64.zip (VC, 64-bit),
+extract SDL2.dll into sdl_runtime\ or the repo root.
+
+本仓库不附带 DLL，也不自动下载 —— 官方下载速度因人而异，地址给你自己下。
+No DLLs are bundled and nothing is auto-downloaded; grab it yourself.
+
+不放也能用：自动退回系统 XInput，Xbox 系手柄正常。
+PS / Switch / 八位堂手柄才需要 SDL。
+Optional: falls back to system XInput, works for Xbox-family pads.
+Only PS / Switch / 8BitDo need SDL.
+
+
+三、默认键位
+------------
+
+  A/B/X/Y、LB/RB、方向键  →  F13~F24（触发拍桌，不插字符）
+  LT / RT                 →  鼠标左键 / 右键
+  左摇杆                  →  移动鼠标
+  Back + Start 长按 1 秒   →  暂停
+  Ctrl + Alt + G          →  暂停
+
+想让按键敲出字符来攒「字符数」，改 config.json 里对应项的 char。
+
+
+四、使用这个脚本的后果（请务必读完）
+------------------------------------
+
+【简体】
+  · 这是非官方的第三方工具，与 Kuro Games / Wuwa Tappo 官方无任何关联，
+    没有官方背书，也不受官方支持。出问题请找本仓库，别找官方客服。
+  · 它只在你自己电脑上运行，不联网、不上传任何数据。风险与后果由你自己承担。
+  · 它不修改、不注入、不读取 Wuwa Tappo 的进程、文件、内存和网络数据。
+    只在自己的进程里读取手柄，再用 Windows 公开接口合成键鼠事件，
+    效果等同于你亲手敲键盘。
+  · 即便如此，任何第三方输入工具都无法保证与所有版本的游戏客户端兼容。
+    游戏更新后可能失效，也可能触发对方的检测机制。
+  · 请自行评估风险后再决定是否使用。
+
+【繁體】
+  · 這是非官方的第三方工具，與 Kuro Games / Wuwa Tappo 官方無任何關聯，
+    沒有官方背書，也不受官方支援。有問題請找本倉庫，別找官方客服。
+  · 它只在你的電腦上執行，不連網、不上傳任何資料。風險與後果由你自己承擔。
+  · 它不修改、不注入、不讀取 Wuwa Tappo 的行程、檔案、記憶體與網路資料。
+    只在自己的行程中讀取手把，再用 Windows 公開介面合成鍵鼠事件，
+    效果等同於你親手敲鍵盤。
+  · 即便如此，任何第三方輸入工具都無法保證與所有版本的遊戲用戶端相容。
+    遊戲更新後可能失效，也可能觸發對方的偵測機制。
+  · 請自行評估風險後再決定是否使用。
+
+【English】
+  · This is an unofficial third-party tool. It is not affiliated with,
+    endorsed by, or supported by Kuro Games or Wuwa Tappo.
+    For issues, come to this repo - not to official support.
+  · It runs locally only. No network access, nothing uploaded.
+    You accept all risks and consequences of using it.
+  · It does not modify, inject into, or read the Wuwa Tappo process,
+    its files, its memory, or its network traffic. It reads your gamepad
+    in its own process, then synthesizes input through public Windows
+    APIs - equivalent to you typing on the keyboard.
+  · Even so, no third-party input tool can guarantee compatibility with
+    every client version. A game update may break it, or may trip
+    anti-tamper / detection mechanisms.
+  · Evaluate the risk yourself before choosing to use it.
+
+
+五、绝对不要用它做的事
+----------------------
+
+下面这些是这类第三方工具的通用红线。本工具在设计上不提供、
+也不会帮你实现其中任何一项；如果你自己改代码去做，后果自负。
+
+【简体】
+  ✗ 自动化 / 脚本挂机刷奖励、刷素材、刷宝箱、刷好感度
+    —— 别把 config.json 里的 repeat_hz 拉满去连发，这就是自动化
+  ✗ 修改、替换、注入游戏客户端的文件或内存
+  ✗ 逆向、抓包、伪造或篡改联机协议数据
+  ✗ 搭建私服、模拟服务器、绕过官方验证
+  ✗ 任何形式的作弊，或在联机 / 排行榜中损害他人体验
+  ✗ 商业使用、打包出售、以及冒用官方名义传播
+  ✗ 用本工具去规避官方的检测或封禁机制
+
+【繁體】
+  ✗ 自動化 / 腳本掛機刷獎勵、刷素材、刷寶箱、刷好感度
+    —— 別把 config.json 裡的 repeat_hz 拉滿去連發，這就是自動化
+  ✗ 修改、替換、注入遊戲用戶端的檔案或記憶體
+  ✗ 逆向、抓包、偽造或竄改連線協定資料
+  ✗ 架設私服、模擬伺服器、繞過官方驗證
+  ✗ 任何形式的作弊，或在連線 / 排行榜中損害他人體驗
+  ✗ 商業使用、打包販售、以及冒用官方名義散播
+  ✗ 用本工具規避官方的偵測或封禁機制
+
+【English】
+  x Automating / botting for rewards, materials, chests, affinity
+    - i.e. do NOT crank repeat_hz in config.json to auto-repeat
+  x Modifying, replacing, or injecting into the game client or its memory
+  x Reverse-engineering, sniffing, forging or tampering with
+    multiplayer protocol data
+  x Running private servers, emulating servers, bypassing official auth
+  x Any form of cheating, or ruining others' experience in
+    multiplayer / leaderboards
+  x Commercial use, reselling, or passing it off as official
+  x Using this tool to evade official detection or bans
+
+重要说明 / Important note:
+  上面的清单是第三方辅助工具的通用原则，不是对官方用户手册的逐字引用。
+  我没有也不引用官方手册原文。实际条款请以 Wuwa Tappo / Kuro Games
+  官方最新公布的用户协议与用户手册为准，并以其中更严格者为准。
+
+  The list above is a general set of principles for third-party helper
+  tools. It is NOT a verbatim quote of any official manual, and I do not
+  reproduce official text. Always defer to the latest official terms of
+  service and user manual published by Wuwa Tappo / Kuro Games -
+  whichever is stricter.
+
+
+六、它到底做了什么（技术说明）
+------------------------------
+
+  手柄 ──► SDL / XInput 轮询 ──► 归一化按钮·摇杆·扳机
+                                        │
+                                        ▼
+                          合成键鼠事件（SendInput）
+                          或直投窗口（PostMessage）
+                                        │
+                                        ▼
+                                Wuwa Tappo（完全不知情）
+
+  全程只在自己的进程里跑。默认走 post 通道，
+  直接把消息投给桌宠窗口，不受最小化和焦点影响。
+
+  Gamepad ──► SDL / XInput poll ──► normalized buttons, sticks, triggers
+                                        │
+                                        ▼
+                          synthesized input (SendInput)
+                          or post to the pet window (PostMessage)
+                                        │
+                                        ▼
+                            Wuwa Tappo (completely unaware)
+
+  Everything runs in its own process. Post mode is the default, so it
+  keeps working while minimized or when another window has focus.
+
+
+七、排错
+--------
+
+  托盘图标不出？ stop.bat → debug.bat，看实时报错
+  后台出问题？   viewlog.bat，看 bridge.log
+  手柄没反应？   托盘菜单 → 探测手柄
+  最小化失效？   diagnose.bat，实测通道
+
+  No tray icon?  stop.bat then debug.bat - errors print live
+  Background trouble?  viewlog.bat reads bridge.log
+  Pad not responding?  tray menu -> Probe gamepad
+  Breaks when minimized?  diagnose.bat tests the channels
+
+
+八、环境要求
+------------
+
+  Windows 10 / 11
+  Python 3.10+（安装时勾选 "Add python.exe to PATH"）
+  SDL2.dll（可选，自行下载）
+
+  Zero third-party packages required for Xbox pads (XInput is built in).

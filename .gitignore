@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# 用户自己放的 SDL 运行时，不要提交二进制
+*.dll
+*.pyd
+sdl_runtime/*.dll
+sdl_runtime/*.lib
+
+# 运行时生成
+config.json
+bridge.log
+lang.txt
+*.log
+dumped_dll/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

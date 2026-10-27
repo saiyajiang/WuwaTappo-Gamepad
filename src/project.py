@@ -3,11 +3,10 @@
 项目元信息
 ==========
 
-**这两个值请改成你自己的** —— 发布到 GitHub 后，托盘「关于」里显示的
-作者和仓库地址就来自这里。改完保存，重启托盘程序即可生效。
+托盘「关于」里显示的作者和仓库地址来自这里。
+换作者或换仓库时改这两行即可，改完重启托盘程序生效。
 
-    AUTHOR     = 你的名字 / 昵称
-    GITHUB_URL = 你的仓库地址（关于里可点击打开）
+Project meta - the About dialog reads AUTHOR and GITHUB_URL from here.
 """
 
 AUTHOR = "saiyajiang"

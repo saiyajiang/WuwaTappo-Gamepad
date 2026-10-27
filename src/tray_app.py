@@ -831,19 +831,55 @@ class TrayApp:
 
     @staticmethod
     def show_about() -> None:
-        """关于。MessageBox 不支持超链接，所以地址以纯文本显示，
-        真正能点开的是菜单里的「项目主页」项。"""
+        """关于 —— 固定中英双语，不随界面语言切换。
+
+        双语是刻意的：这个工具面向中文用户，但仓库是英文的，
+        无论用户当前选的是哪种界面语言，关于里都同时给出中英文。
+
+        MessageBox 不支持超链接，所以地址以纯文本显示；
+        真正能点开的是菜单里的「项目主页」项。
+        """
         url = getattr(project, "GITHUB_URL", "")
         unset = (not url) or ("your-name" in url)
-        url_line = f"\n{t('tray.about_url')}\n  " + (
-            t("tray.repo_unset_short") if unset else url)
-        u32.MessageBoxW(0,
-                        t("tray.about",
-                          author=getattr(project, "AUTHOR", "-"),
-                          version=getattr(project, "VERSION", ""),
-                          license=getattr(project, "LICENSE_NAME", ""))
-                        + url_line,
-                        t("tray.menu.about"), 0x40)
+        url_show = ("(not set)" if unset else url)
+        author = getattr(project, "AUTHOR", "-")
+        version = getattr(project, "VERSION", "")
+        lic = getattr(project, "LICENSE_NAME", "")
+
+        text = (
+            "Wuwa Tappo 手柄桥接   v{ver}\n"
+            "作者 / Author：{author}\n"
+            "许可 / License：{lic}\n"
+            "\n"
+            "【中文】\n"
+            "  这是非官方的第三方工具，与官方无任何关联。\n"
+            "  它只在自己的进程里读手柄，再合成键鼠事件，\n"
+            "  不碰 Wuwa Tappo 的进程、文件、内存和网络。\n"
+            "  使用前请阅读 USAGE.txt 里的后果与禁止事项。\n"
+            "\n"
+            "  左键双击托盘图标 = 暂停 / 恢复\n"
+            "  右键 = 菜单\n"
+            "  手柄 Back+Start 长按 1 秒，或 Ctrl+Alt+G，也能暂停\n"
+            "  后台运行，关掉启动窗口不会停止它\n"
+            "\n"
+            "[English]\n"
+            "  Unofficial third-party tool, not affiliated with the\n"
+            "  official product. It reads your gamepad in its own\n"
+            "  process and synthesizes input - it never touches the\n"
+            "  Wuwa Tappo process, files, memory or network.\n"
+            "  Read USAGE.txt for risks and prohibited uses.\n"
+            "\n"
+            "  Left double-click the tray icon = pause / resume\n"
+            "  Right-click = menu\n"
+            "  Back+Start on the pad for 1s, or Ctrl+Alt+G, also pauses\n"
+            "  Runs in the background - closing the launcher\n"
+            "  window does not stop it\n"
+            "\n"
+            "项目主页 / Project home（菜单里点击可打开）:\n"
+            "  {url}"
+        ).format(ver=version, author=author, lic=lic, url=url_show)
+
+        u32.MessageBoxW(0, text, t("tray.menu.about"), 0x40)
 
     # ---- 窗口过程 ----
     def wnd_proc(self, hwnd, msg, wparam, lparam):

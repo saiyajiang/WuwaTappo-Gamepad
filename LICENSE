@@ -22,16 +22,4 @@ SOFTWARE.
 
 ---
 
-Third-party components:
-
-- SDL2 (optional, not bundled, no auto-downloader): zlib License,
-  Copyright (C) 1997-2025 Sam Lantinga <slouken@libsdl.org>.
-  https://www.libsdl.org/license.php
-  The user downloads SDL2.dll from the official source and places it manually.
-  It is neither bundled with nor fetched by this repository.
-
-Trademark notice:
-
-- "Wuwa Tappo", "鸣潮" and related marks belong to Kuro Games / their
-  respective owners. This project is an unofficial, non-affiliated tool and
-  is not endorsed by or associated with them.
+Third-party components and trademark notice: see NOTICE.txt

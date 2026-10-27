@@ -465,41 +465,14 @@ S = {
         "en": "An instance is already in the tray.\n\nExit the old one first "
               "(right-click the icon → Exit), then start again.",
     },
-    "tray.about": {
-        "sc": "Wuwa Tappo 手柄桥接  v{version}\n"
-              "作者：{author}\n"
-              "许可：{license}\n\n"
-              "左键双击托盘图标 = 暂停 / 恢复\n"
-              "右键 = 菜单\n\n"
-              "手柄 Back+Start 长按 1 秒也能暂停，Ctrl+Alt+G 同样有效。\n"
-              "后台运行，关掉启动窗口不会停止它。",
-        "tc": "Wuwa Tappo 手把橋接  v{version}\n"
-              "作者：{author}\n"
-              "授權：{license}\n\n"
-              "左鍵雙擊托盤圖示 = 暫停 / 恢復\n"
-              "右鍵 = 選單\n\n"
-              "手把 Back+Start 長按 1 秒也能暫停，Ctrl+Alt+G 同樣有效。\n"
-              "背景執行，關閉啟動視窗不會停止它。",
-        "en": "Wuwa Tappo Gamepad Bridge  v{version}\n"
-              "Author: {author}\n"
-              "License: {license}\n\n"
-              "Left double-click the tray icon = pause / resume\n"
-              "Right-click = menu\n\n"
-              "Back+Start on the pad for 1s also pauses, as does Ctrl+Alt+G.\n"
-              "Runs in the background - closing the launcher window "
-              "does not stop it.",
-    },
+    # (关于对话框文案已改为固定中英双语，不再走 i18n 表)
     "tray.author_unset": {
         "sc": "作者和仓库地址还是占位符，请编辑 src\\project.py 填成你自己的。",
         "tc": "作者與倉庫網址仍是佔位符，請編輯 src\\project.py 填成你自己的。",
         "en": "Author and repo URL are still placeholders - "
               "edit src\\project.py and fill in your own.",
     },
-    "tray.about_url": {
-        "sc": "项目主页（菜单里点击可直接打开）：",
-        "tc": "專案首頁（選單中點擊可直接開啟）：",
-        "en": "Project home (click the menu item to open):",
-    },
+    # (关于对话框文案已改为固定中英双语，不再走 i18n 表)
     "tray.menu.repo": {
         "sc": "项目主页（打开 GitHub）",
         "tc": "專案首頁（開啟 GitHub）",

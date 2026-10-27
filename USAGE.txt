@@ -22,10 +22,7 @@
   2. Double-click launch.bat
   3. Tray: left double-click = pause/resume, right-click = menu
 
-托盘图标是黑白的 W：
-  黑色 W = 运行中 / Running
-  灰色 W = 已暂停 / Paused
-  灰 W + 红点 = 出错 / Error
+托盘图标会随状态变化，鼠标悬停可看到当前状态和累计敲击次数。
 
 图标可能被 Windows 收进任务栏的 ∧ 里，去那里拖出来即可。
 The icon may be hidden under the taskbar's ^ arrow - drag it out.

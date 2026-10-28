@@ -1,11 +1,57 @@
 # Wuwa Tappo · 手柄桥接
 
-> **English / 繁體中文** — 支持三种界面语言，首次启动时会让你选，之后记住。
+> [!WARNING]
+> **本仓库已停止维护（DEPRECATED / ARCHIVED）**
+>
+> **Wuwa Tappo 官方已原生支持手柄**，不再需要这个桥接工具。
+> 请直接使用官方功能，卸载并删除本项目。
+>
+> 代码保留仅作归档，不再修复问题、不再适配新版客户端，也不再接受功能建议。
+> 继续使用可能在新版本客户端上失效，请自行承担风险。
 
-Wuwa Tappo 本身不支持手柄，只监听键鼠。这个项目把手柄输入翻译成键鼠事件喂给它，
-让桌宠跟着手柄一起拍桌子。**不修改、不注入、不读取 Wuwa Tappo 的任何文件或内存。**
+> [!WARNING]
+> **This repository is deprecated and no longer maintained.**
+>
+> **Wuwa Tappo now supports gamepads natively** - this bridge is no
+> longer needed. Please use the official feature instead, and remove
+> this project.
+>
+> Kept for archival purposes only. No fixes, no compatibility updates
+> for newer client versions, no feature requests. If you keep using it,
+> it may break after a client update - at your own risk.
 
 ---
+
+> **English / 繁體中文** — 支持三种界面语言，首次启动时会让你选，之后记住。
+
+本项目诞生于 Wuwa Tappo **尚不支持手柄**的时期：把手柄输入翻译成键鼠事件喂给它，
+让桌宠跟着手柄一起拍桌子。**不修改、不注入、不读取 Wuwa Tappo 的任何文件或内存。**
+
+**现在官方已原生支持手柄，这个工具的使命已经结束。**
+
+---
+
+## 为什么停用
+
+官方在后续版本中**原生加入了手柄支持**。既然官方已经做好了，
+这个第三方桥接就没有存在意义了 —— 官方实现更稳定、更贴合客户端、
+也不会有任何合规风险。
+
+感谢每一位用过它的朋友。
+
+## 建议
+
+- **新用户**：直接用官方的手柄功能，不需要下载本仓库。
+- **老用户**：卸载并删除本项目（`stop.bat` 停止运行后删掉整个文件夹即可）。
+  记得把开机自启关掉（`toggle_autorun.bat`）。
+
+---
+
+# 以下为历史归档内容（不建议使用）
+
+> [!NOTE]
+> 从这一段往下都是**归档内容**，仅用于说明这个工具当年是怎么做的。
+> **请不要再照着它安装使用。** 官方手柄支持已经覆盖了这些需求。
 
 ## 三步开始
 

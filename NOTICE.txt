@@ -1,6 +1,12 @@
 NOTICE — 开源许可与第三方组件
 ==============================
 
+【已停用】本仓库已停止维护 —— 官方已原生支持手柄。
+          许可信息保留在此，仅供归档引用。
+【DEPRECATED】No longer maintained - Wuwa Tappo supports
+              gamepads natively now. Licensing info kept
+              here for archival reference only.
+
 Wuwa Tappo Gamepad Bridge
 本项目自身采用 MIT 许可证，详见 LICENSE 文件。
 
